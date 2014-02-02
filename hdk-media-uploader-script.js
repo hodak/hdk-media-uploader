@@ -61,7 +61,6 @@
 				fileFrame.on( 'select', function() {
 					// We set multiple to false so only get one image from the uploader
 					attachment = fileFrame.state().get( 'selection' ).first().toJSON();
-					console.log( attachment );
 					initializeVars( e.target );
 					onFileSelected( attachment );
 				} );
