@@ -21,7 +21,7 @@ class HdkMediaUploader {
 			'name' => '',               # necessary input name
 			'attachment_id' => '',      # photo id
 			'button_text' => 'Upload',
-			'button_class' => 'btn',
+			'button_class' => 'button',
 			# 'multiple' => false # maybe some day. it's kind of complicated
 		), $args );
 
