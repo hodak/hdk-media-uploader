@@ -54,7 +54,29 @@ class HdkMediaUploader {
 		HdkMediaUploader :: $directory_url = rtrim( $directory_url, '/' ) . '/';
 	}
 	private function get_directory_url() {
-		return HdkMediaUploader :: $directory_url;
+		# if directory url is not set, we try to save this situation and check current plugin/ and theme/ directories under /lib/hdk-media-uploader/
+		if( empty( HdkMediaUploader :: $directory_url ) ) {
+			# theme
+			if( strpos( __FILE__, 'wp-content/themes' ) !== false ) {
+				if( file_exists( get_stylesheet_directory() . '/lib/hdk-media-uploader/hdk-media-uploader-script.js' ) ) {
+					$this -> set_directory_url( get_stylesheet_directory_uri() . '/lib/hdk-media-uploader' );
+				}
+			}
+
+			# plugin	
+			elseif( strpos( __FILE__, 'wp-content/plugins' ) !== false ) {
+				if( file_exists( plugin_dir_path( __FILE__ ) . 'lib/hdk-media-uploader/hdk-media-uploader-script.js' ) ) {
+					$this -> set_directory_url( plugin_dir_url( __FILE__ ) . 'lib/hdk-media-uploader' );
+				}
+			}
+		}	
+
+		# die if still empty
+		if( empty( HdkMediaUploader :: $directory_url ) ) {
+			$this -> go_and_die( 'You must set directory url' );
+		} else {
+			return HdkMediaUploader :: $directory_url;
+		}
 	}
 
 	# todo get to know more (documentation)
