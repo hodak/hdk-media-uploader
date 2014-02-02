@@ -73,7 +73,8 @@
 			var onFileSelected = function( attachment ) {
 				inputField.val( attachment.id );
 				photoUploaderWrap.removeClass( 'hidden' );
-				img.attr( 'src', attachment.url );
+
+				img.attr( 'src', attachment.sizes.thumbnail.url );
 				uploadButton.addClass( 'hidden' );
 			}
 
