@@ -35,6 +35,7 @@ class HdkMediaUploader {
 	}
 
 	public function show_input( $args ) {
+		$attachment = null;
 		if( intval( $args['attachment_id'] ) > 0 ) {
 			$attachment = new stdClass();
 			$attachment -> id = intval( $args['attachment_id'] );
