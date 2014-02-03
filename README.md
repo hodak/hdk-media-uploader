@@ -78,5 +78,9 @@ Path: http://codex.wordpress.org/Function_Reference/get_stylesheet_directory
 
 URL: http://codex.wordpress.org/Function_Reference/get_stylesheet_directory_uri
 
+## Behavior
+* Adding image sets input's value to chosen attachment's ID
+* Removing image unsets this input - changes must be saved. Removing image does not remove image from Media Library.
+
 ## Credit
 Most of the credit goes to Mike Jolley: http://mikejolley.com/2012/12/using-the-new-wordpress-3-5-media-uploader-in-plugins/
