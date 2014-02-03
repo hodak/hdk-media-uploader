@@ -41,6 +41,7 @@
 
 			var onUploadClick = function( e ) {
 				e.preventDefault();
+				initializeVars( e.target );
 
 				// If the media frame already exists, reopen it.
 				if( fileFrame ) {
@@ -61,7 +62,6 @@
 				fileFrame.on( 'select', function() {
 					// We set multiple to false so only get one image from the uploader
 					attachment = fileFrame.state().get( 'selection' ).first().toJSON();
-					initializeVars( e.target );
 					onFileSelected( attachment );
 				} );
 
