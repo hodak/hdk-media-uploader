@@ -4,6 +4,11 @@ This is a library for creators of WordPress themes & plugins that makes it simpl
 to include Media Uploader in WordPress admin panel.
 It's a fairly common client's requirement so why not make it simple.
 
+<p align="center">
+  <img src="https://github.com/hodak/hdk-media-uploader/raw/master/demo.gif" alt="Demo gif" title="Demo" />
+</p>
+
+
 It creates hidden input field with value set to the id of chosen attachment.
 
 You can include it in any place (**in WordPress admin panel**) you want - meta boxes, option pages, you name it.
@@ -58,7 +63,7 @@ Let's assume we create a `test` plugin.
   ```
   
 ### Different path
-If you don't want to use `/lib/hdk-media-uploader/` path, you're in luck. You can paste it whenever you want and use this one-line setup before creating instance:
+If you don't want to use `/lib/hdk-media-uploader/` path, you're in luck. You can paste it wherever you want and use this one-line setup before creating instance:
 
 ```
 HdkMediaUploader :: set_directory_url( 'your-url-for-this-repo' )
