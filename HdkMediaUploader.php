@@ -25,7 +25,8 @@ class HdkMediaUploader {
 			# 'multiple' => false # maybe some day. it's kind of complicated
 		), $args );
 
-		# enqueue script
+		# enqueue scripts
+		wp_enqueue_media();
 		wp_enqueue_script( 'hdk_media_uploader_script', $this -> get_directory_url() . 'hdk-media-uploader-script.js', array( 'jquery' ), $this -> ver, true );
 		# enqueue style
 		wp_enqueue_style( 'hdk_media_uploader_style', $this -> get_directory_url() . 'hdk-media-uploader-style.css', array(), $this -> ver );
