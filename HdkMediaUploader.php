@@ -66,8 +66,9 @@ class HdkMediaUploader {
 
 			# plugin	
 			elseif( strpos( __FILE__, 'wp-content/plugins' ) !== false ) {
-				if( file_exists( plugin_dir_path( __FILE__ ) . 'lib/hdk-media-uploader/hdk-media-uploader-script.js' ) ) {
-					$this -> set_directory_url( plugin_dir_url( __FILE__ ) . 'lib/hdk-media-uploader' );
+				if( file_exists( plugin_dir_path( __FILE__ ) . 'hdk-media-uploader-script.js' ) ) {
+					$this -> set_directory_url( plugin_dir_url( __FILE__ ) );
+					echo HdkMediaUploader :: $directory_url;
 				}
 			}
 		}	
